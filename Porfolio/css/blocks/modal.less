@@ -1,0 +1,698 @@
+// main: ../style.less
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    overflow: auto;
+
+    background-color: rgba(6,15,49,0.9);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    &.show {
+        display: flex;
+    }
+}
+.modal__dialog {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+
+    background-color: #fff;
+
+    transform: rotateX(90deg);
+    transition: transform .2s linear;
+
+    &--sm {
+        max-width: 900px;
+    }
+}
+.modal__close {
+    width: 34px;
+    height: 39px;
+    padding: 0;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    z-index: 1;
+
+    transition: transform .2s linear;
+
+    &:hover {
+        transform: rotate(90deg);
+//        transform: translateY(-3px);
+
+    }
+}
+
+.modal__title {
+    margin-bottom: 3.6rem;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: @black;
+}
+.modal__subtitle {
+    text-transform: uppercase;
+    font-size: 1.06rem;
+    font-weight: 400;
+    color:@black;
+}
+
+
+===============================================
+<!--Works-->
+<div class="works" id="works">
+    <div class="container"><!--container-->
+
+            <div class="works__nav">
+                <a class="works__nav-link works__nav-link--price" href="#" data-filter="price">Прайс на услуги</a>
+                <a class="works__nav-link" href="#" data-filter="clean">Чистки</a>
+                <a class="works__nav-link" href="#" data-filter="peeling">Пилинги Уходы</a>
+                <a class="works__nav-link" href="#" data-filter="сarboxy">Карбокситерапия</a>
+                <a class="works__nav-link" href="#" data-filter="biorev">Лазерная биоревитализация</a>
+                <a class="works__nav-link" href="#" data-filter="аractional">Фракционная мезотерапия</a>
+                <a class="works__nav-link" href="#" data-filter="massage">Массаж</a>
+            </div>
+
+        <div class="portfolio"><!--portfolio-->
+
+<!--clean-->
+            <div class="portfolio__col" data-cat="clean" data-modal="#modal_clean-1">
+                <div class="work">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Чистка</div>
+                       <div class="work__title">PROJECT TITLE
+                       <time class="work__date" datetime="2021-09-01 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./clean-->
+<!--peeling-->
+            <div class="portfolio__col" data-cat="peeling">
+                <div class="work"  data-modal="#modal_peeling_1">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Пилинги Уходы</div>
+                       <div class="work__title">Пилинг DSA Black
+                       <time class="work__date" datetime="2021-09-13 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./peeling-->
+            <div class="portfolio__col" data-cat="peeling">
+                <div class="work"  data-modal="#modal_peeling_2">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Пилинги Уходы</div>
+                       <div class="work__title">Пилинг DSA Black
+                       <time class="work__date" datetime="2021-09-13 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./peeling-->
+            <div class="portfolio__col" data-cat="peeling">
+                <div class="work"  data-modal="#modal_peeling_3">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Пилинги Уходы</div>
+                       <div class="work__title">Пилинг DSA Black
+                       <time class="work__date" datetime="2021-09-13 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./peeling-->
+
+<!--Carboxy-->
+            <div class="portfolio__col" data-cat="сarboxy" ata-modal="#modal_project_1">
+                <div class="work">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Карбокситерапия</div>
+                       <div class="work__title">PROJECT TITLE
+                       <time class="work__date" datetime="2021-09-01 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./Carboxy-->
+<!--biorev-->
+            <div class="portfolio__col" data-cat="biorev" ata-modal="#modal_project_1">
+                <div class="work">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Лазерная биоревитализация</div>
+                       <div class="work__title">PROJECT TITLE
+                       <time class="work__date" datetime="2021-09-01 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./biorev-->
+<!--Fractional-->
+            <div class="portfolio__col" data-cat="аractional" ata-modal="#modal_project_1">
+                <div class="work">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Фракционная мезотерапия</div>
+                       <div class="work__title">PROJECT TITLE
+                       <time class="work__date" datetime="2021-09-01 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./Fractional-->
+<!--Massage-->
+            <div class="portfolio__col" data-cat="massage" ata-modal="#modal_project_1">
+                <div class="work">
+                    <img class="work__image" src="https://place-hold.it/370x300" alt="">
+                    <div class="work__content">
+                       <div class="wotrk__cat">Category: Массаж</div>
+                       <div class="work__title">PROJECT TITLE
+                       <time class="work__date" datetime="2021-09-01 11:15">2021</time>
+                       </div>
+                    </div>
+                </div>
+            </div><!--./Massage-->
+
+
+
+
+        </div><!--./portfolio-->
+
+<!--Price-->
+        <div class="price hide" id="modal_clean_1" data-cat="price" >
+                   <table >
+                     <caption>
+                     Прайс на услуги</caption>
+                      <thead>
+                           <tr>
+                               <th>Наименование процедуры</th>
+                               <th>Цена ( руб. )</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>Ультрозвуковая чистка</td>
+                               <td>2700</td>
+                           </tr>
+                           <tr>
+                               <td>Комбинированная глубокая чистка лица</td>
+                               <td>2970 3500</td>
+                           </tr>
+                           <tr>
+                               <td>Постуход (после чистки)</td>
+                               <td>1500</td>
+                           </tr>
+                           <tr>
+                               <td>Пилинг BioRePeel</td>
+                               <td>3850-4900</td>
+                           </tr>
+                           <tr>
+                               <td>Пилинг PRX-T33</td>
+                               <td>4400-5000</td>
+                           </tr>
+                           <tr>
+                               <td>Пилинг DSA black</td>
+                               <td>3500</td>
+                           </tr>
+                           <tr>
+                               <td>Пилинг DSA white</td>
+                               <td class="second">3500-4200</td>
+                           </tr>
+                           <tr>
+                               <td>Классический массаж лица</td>
+                               <td>1100</td>
+                           </tr>
+                           <tr>
+                               <td>Комбинированный массаж лица <br> (классический+буккальный)</td>
+                               <td>2000</td>
+                           </tr>
+                           <tr>
+                               <td>Скульптурно-буккальный массаж лица
+                                <br> (массаж+маска по показаниям)</td>
+                               <td>3850</td>
+                           </tr>
+                           <tr>
+                               <td>Лазерная биоревитализация Beauty Tek Light</td>
+                               <td>2500-5000</td>
+                           </tr>
+                           <tr>
+                               <td>Карбокситерапия Daejong medical (Корея)</td>
+                               <td>1800-2500</td>
+                           </tr>
+                           <tr>
+                               <td>Карбокситерапия DEMAX (Япония)</td>
+                               <td class="second">3000-3500</td>
+                           </tr>
+                           <tr>
+                               <td>Фракционная мезотерапия</td>
+                               <td>2500-5000</td>
+                           </tr>
+                           <tr>
+                               <td>Фракционная мезотерапия вокруг глаз</td>
+                               <td>1500</td>
+                           </tr>
+                           <tr>
+                               <td>Уход за зоной вокруг глаз BIOPTIC</td>
+                               <td>2100</td>
+                           </tr>
+                           <tr>
+                               <td>LED-ТЕРАПИЯ</td>
+                               <td>1000</td>
+                           </tr>
+                           <tr>
+                               <td>Омолаживающий экспресс-уход Meillume</td>
+                               <td>2000</td>
+                           </tr>
+                           <tr>
+                               <td>Премиум-уход от Ericson Labaratoire
+                               <br>(программа определяется по проблеме)</td>
+                               <td class="second">6950</td>
+                           </tr>
+                           <tr>
+                               <td>Дарсонвализация кожи головы</td>
+                               <td>300</td>
+                           </tr>
+                           <tr>
+                               <td>Консультация</td>
+                               <td>250</td>
+                           </tr>
+                           <tr>
+                               <td>Консультация в день процедуры</td>
+                               <td>бесплатно</td>
+                           </tr>
+                                    </table>
+           </div><!--./Price-->
+
+        <div class="works__footer">
+            <div class="works__logo">
+                <a href="#intro">
+                    <img src="images/logo1.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div><!--./container-->
+</div><!--./works-->
+
+
+
+===============================================
+<!--Modals_clean-->
+<div class="modal" id="modal_clean-" style="display: none">
+    <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close>
+            <img src="images/modal-close.svg" width="34" height="39" alt="Close">
+        </button>
+
+        <div class="modal-work">
+          <div class="modal-work__preview">
+             <div data-slider="slick">
+               <div>
+                    <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                </div>
+                <div>
+                    <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                </div>
+              </div>
+          </div>
+          <div class="modal-work__content">
+              <div class="modal-work_header">
+                  <div class="modal-work_title">Project title</div>
+                  <div class="modal-work__info">Category <span class="modal-work__infi-devider">|</span> 2021
+                  </div>
+              </div>
+
+              <div class="modal-work__clients">
+                  <div class="modal-work__clients-title">Client:</div>
+                  <div class="modal-work__clients-company">Creative Agency</div>
+              </div>
+              <div class="modal-work__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>
+              </div>
+
+              <div class="modal-work__footer">
+                <button class="modal-work__btn slickPrev modal-work__btn--prev" type="button">
+                    <img src="images/left-arrow.svg" height="11" alt="">
+                    Previous</button>
+                <button class="modal-work__btn slickNext modal-work__btn--next" type="button">
+                    Next
+                    <img src="images/next.svg" height="11"  alt="">
+                </button>
+              </div>
+
+          </div><!--modal-work__content-->
+
+        </div> <!--./modal-work-->
+</div><!--./modal_dialog-->
+</div><!--./modal_clean-->
+
+<!-----------./modals_clean---------------->
+
+<!--Modals_peeling-->
+
+<div class="modal" id="modal_peeling-1">
+    <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close>
+            <img src="images/modal-close.svg" width="34" height="39" alt="Close">
+        </button>
+
+        <div class="modal-work">
+          <div class="modal-work__preview">
+             <div data-slider="slick">
+               <div>
+                    <img class="modal-work__photo" src="images/peeling/DSA%20Black-1.jpg" alt="">
+                </div>
+                <div>
+                    <img class="modal-work__photo" src="images/peeling/DSA%20Black-2.jpg" alt="">
+                </div>
+                <div>
+                    <img class="modal-work__photo" src="images/peeling/DSA%20Black-3.jpg" alt="">
+                </div>
+              </div>
+          </div>
+          <div class="modal-work__content">
+              <div class="modal-work_header">
+                  <div class="modal-work_title">Project title</div>
+                  <div class="modal-work__info">Category <span class="modal-work__infi-devider">|</span> 2021
+                  </div>
+              </div>
+
+              <div class="modal-work__clients">
+                  <div class="modal-work__clients-title">Client:</div>
+                  <div class="modal-work__clients-company">Creative Agency</div>
+              </div>
+              <div class="modal-work__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>
+              </div>
+
+              <div class="modal-work__footer">
+                <button class="modal-work__btn slickPrev modal-work__btn--prev" type="button">
+                    <img src="images/left-arrow.svg" height="11" alt="">
+                    Previous</button>
+                <button class="modal-work__btn slickNext modal-work__btn--next" type="button">
+                    Next
+                    <img src="images/next.svg" height="11"  alt="">
+                </button>
+              </div>
+
+          </div><!--modal-work__content-->
+
+        </div> <!--./modal-work-->
+</div><!--./modal_dialog-->
+</div><!--./modal_peeling-->
+<div class="modal" id="modal_peeling-2" style="display: none">
+    <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close>
+            <img src="images/modal-close.svg" width="34" height="39" alt="Close">
+        </button>
+
+        <div class="modal-work">
+          <div class="modal-work__preview">
+             <div data-slider="slick">
+               <div>
+                    <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                </div>
+                <div>
+                    <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                </div>
+              </div>
+          </div>
+          <div class="modal-work__content">
+              <div class="modal-work_header">
+                  <div class="modal-work_title">Project title</div>
+                  <div class="modal-work__info">Category <span class="modal-work__infi-devider">|</span> 2021
+                  </div>
+              </div>
+
+              <div class="modal-work__clients">
+                  <div class="modal-work__clients-title">Client:</div>
+                  <div class="modal-work__clients-company">Creative Agency</div>
+              </div>
+              <div class="modal-work__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>
+              </div>
+
+              <div class="modal-work__footer">
+                <button class="modal-work__btn slickPrev modal-work__btn--prev" type="button">
+                    <img src="images/left-arrow.svg" height="11" alt="">
+                    Previous</button>
+                <button class="modal-work__btn slickNext modal-work__btn--next" type="button">
+                    Next
+                    <img src="images/next.svg" height="11"  alt="">
+                </button>
+              </div>
+
+          </div><!--modal-work__content-->
+
+        </div> <!--./modal-work-->
+</div><!--./modal_dialog-->
+</div><!--./modal_peeling-->
+<div class="modal" id="modal_peeling-3" style="display: none">
+    <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close>
+            <img src="images/modal-close.svg" width="34" height="39" alt="Close">
+        </button>
+
+        <div class="modal-work">
+          <div class="modal-work__preview">
+             <div data-slider="slick">
+               <div>
+                    <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                </div>
+                <div>
+                    <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                </div>
+              </div>
+          </div>
+          <div class="modal-work__content">
+              <div class="modal-work_header">
+                  <div class="modal-work_title">Project title</div>
+                  <div class="modal-work__info">Category <span class="modal-work__infi-devider">|</span> 2021
+                  </div>
+              </div>
+
+              <div class="modal-work__clients">
+                  <div class="modal-work__clients-title">Client:</div>
+                  <div class="modal-work__clients-company">Creative Agency</div>
+              </div>
+              <div class="modal-work__text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed a temporibus, dolores voluptates, voluptate dolorum architecto reprehenderit recusandae, optio quaerat pariatur nostrum quis eum eaque voluptatibus? Dolore, eius hic delectus!</p>
+              </div>
+
+              <div class="modal-work__footer">
+                <button class="modal-work__btn slickPrev modal-work__btn--prev" type="button">
+                    <img src="images/left-arrow.svg" height="11" alt="">
+                    Previous</button>
+                <button class="modal-work__btn slickNext modal-work__btn--next" type="button">
+                    Next
+                    <img src="images/next.svg" height="11"  alt="">
+                </button>
+              </div>
+
+          </div><!--modal-work__content-->
+
+        </div> <!--./modal-work-->
+</div><!--./modal_dialog-->
+</div><!--./modal_peeling-->
+<!-------------./modals_peeling--------------->
+
+<div class="modal" id="modal_price_2" style="display: none">
+    <div class="modal__dialog modal__dialog-price">
+       <div class="modal-work">
+        <button class="modal__close" type="button" data-close>
+            <img src="images/modal-close.svg" width="34" height="39" alt="Close">
+        </button>
+        <div>
+            <img class="modal-work__photo-price" src="images/prace/prace-1.jpg" alt="">
+        </div>
+        </div> <!--./modal-work-->
+</div><!--./modal_dialog-->
+</div><!--./modal-->
+
+<div class="modal" id="modal_price_3"style="display: none" >
+    <div class="modal__dialog modal__dialog-price">
+       <div class="modal-work">
+        <button class="modal__close" type="button" data-close>
+            <img src="images/modal-close.svg" width="34" height="39" alt="Close">
+        </button>
+        <div>
+            <img class="modal-work__photo-price" src="images/prace/prace-2.jpg" alt="">
+        </div>
+        </div> <!--./modal-work-->
+</div><!--./modal_dialog-->
+</div><!--./modal-->
+
+<div class="modal" id="modal_resume"style="display: none"style="display: none">
+
+    <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close>
+            <img src="images/modal-close.svg" width="34" height="39" alt="Close">
+        </button>
+
+        <div class="modal__content">
+            <h3 class="modal__title text-center">Resume</h3>
+
+            <div class="text-center">
+                <a class="btn btn--thin" href="#">Download pdf</a>
+                <a class="btn btn--thin" href="#">Print</a>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline__col timeline__col--left">
+                    <h4 class="timeline__title ">
+                        EXPERIENCE
+                    </h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2017 - <b>Present</b></time>
+                        <h5 class="timeline__subtitle">Freelancer</h5>
+                        <div class="timeline__position">Art Director</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati non omnis tempora nostrum adipisci dolor facere, minus. Vel laudantium, labore provident possimus assumenda doloremque nam reprehenderit nostrum, modi repudiandae nobis.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2017 - <b>Present</b></time>
+                        <h5 class="timeline__subtitle">Freelancer</h5>
+                        <div class="timeline__position">Art Director</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati non omnis tempora nostrum adipisci dolor facere, minus. Vel laudantium, labore provident possimus assumenda doloremque nam reprehenderit nostrum, modi repudiandae nobis.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2017 - <b>Present</b></time>
+                        <h5 class="timeline__subtitle">Freelancer</h5>
+                        <div class="timeline__position">Art Director</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati non omnis tempora nostrum adipisci dolor facere, minus. Vel laudantium, labore provident possimus assumenda doloremque nam reprehenderit nostrum, modi repudiandae nobis.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2017 - <b>Present</b></time>
+                        <h5 class="timeline__subtitle">Freelancer</h5>
+                        <div class="timeline__position">Art Director</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati non omnis tempora nostrum adipisci dolor facere, minus. Vel laudantium, labore provident possimus assumenda doloremque nam reprehenderit nostrum, modi repudiandae nobis.</p>
+                        </div>
+                    </div>
+
+                </div><!--./timeline__col--left-->
+
+
+
+                <div class="timeline__col timeline__col--right">
+                    <h4 class="timeline__title">
+                        EDUCATION
+                    </h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2005 - 2010</time>
+                        <h5 class="timeline__subtitle">UI/UX Design</h5>
+                        <div class="timeline__position">LA University, USA</div>
+
+                    </div>
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2002 - 2005</time>
+                        <h5 class="timeline__subtitle">UI/UX Design</h5>
+                        <div class="timeline__position">LA Collage of Art, USA</div>
+
+                    </div>
+                    <h4 class="timeline__title">
+                        Skills
+                    </h4>
+                    <div class="progress-bar">
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">
+                                    UI/UX Design
+                                </div>
+                            </div>
+
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 75%;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">
+                                    UI/UX Design
+                                </div>
+                            </div>
+
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 90%;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">
+                                    UI/UX Design
+                                </div>
+                            </div>
+
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 80%;">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div><!--./progress-bar-->
+
+                    <h4 class="timeline__title">
+                        Awords
+                    </h4>
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2005 - 2010</time>
+                        <h5 class="timeline__subtitle">UI/UX Design</h5>
+                        <div class="timeline__position">LA University, USA</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="timeline__item">
+                        <time class="timeline__date" datetime="03-09-2021">2005 - 2010</time>
+                        <h5 class="timeline__subtitle">UI/UX Design</h5>
+                        <div class="timeline__position">LA University, USA</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div><!--./timeline__col--right-->
+            </div><!--./timeline-->
+
+            <div class="text-center">
+                <a href="#" class="btn">Hire me</a>
+            </div>
+
+        </div><!--./modal__content-->
+
+</div><!--./modal_dialog-->
+</div><!--./modal-->
+
